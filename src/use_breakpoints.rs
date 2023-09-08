@@ -192,12 +192,12 @@ impl<K: Eq + Hash + Debug + Clone> UseBreakpointsReturn<K> {
     }
 
     fn not_found_signal(&self, key: K) -> Signal<bool> {
-        error!("Breakpoint \"{:?}\" not found", key);
+        logging::error!("Breakpoint \"{:?}\" not found", key);
         Signal::derive(|| false)
     }
 
     fn not_found(&self, key: K) -> bool {
-        error!("Breakpoint \"{:?}\" not found", key);
+        logging::error!("Breakpoint \"{:?}\" not found", key);
         false
     }
 
